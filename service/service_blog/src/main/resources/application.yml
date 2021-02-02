@@ -1,0 +1,22 @@
+server:
+  port: 8080 # 服务端口
+
+spring:
+  jackson: #返回json的全局时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+80
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: service-blog # 服务名
+  datasource: # mysql数据库连接
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sunblog?serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+
+#mybatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
